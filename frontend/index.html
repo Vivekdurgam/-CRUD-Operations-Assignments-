@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Customer Management System</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div id="main-view">
+                <section id="customer-form-section">
+                    <h2>Add/Update Customer</h2>
+                    <form id="customer-form">
+                        <input type="hidden" id="customer-id">
+                        
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                        
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                        
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        
+                        <hr>
+                        <h3>First Address Details (Mandatory)</h3>
+                        <label for="street">Street Address:</label>
+                        <input type="text" id="street" name="street" required>
+
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city" required>
+
+                        <label for="state">State:</label>
+                        <input type="text" id="state" name="state" required>
+
+                        <label for="pincode">Pin Code:</label>
+                        <input type="text" id="pincode" name="pincode" required>
+                        
+                        <div id="additional-addresses-container"></div>
+                        <button type="button" id="add-address-fields-btn">+ Add Other Address</button>
+
+                        <button type="submit" id="submit-btn">Add Customer</button>
+                        <button type="button" id="clear-btn">Clear Form</button>
+                    </form>
+                </section>
+
+                <hr>
+
+                <section id="customer-list-section">
+                    <h2>Customer List</h2>
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search by name, city, or pincode...">
+                        <button id="clearSearchBtn">Clear Search</button>
+                    </div>
+                    <ul id="customer-list"></ul>
+                </section>
+            </div>
+
+            <div id="detail-view" style="display: none;">
+                <button id="back-to-list-btn">← Back to List</button>
+                <h2 id="customer-name-display"></h2>
+                <div id="customer-info-display"></div>
+                
+                <section id="address-form-section">
+                    <h3>Add/Update Address</h3>
+                    <form id="address-form">
+                        <input type="hidden" id="address-id">
+                        <input type="hidden" id="address-customer-id">
+                        
+                        <label for="detailStreet">Street:</label>
+                        <input type="text" id="detailStreet" name="detailStreet" required>
+
+                        <label for="detailCity">City:</label>
+                        <input type="text" id="detailCity" name="detailCity" required>
+
+                        <label for="detailState">State:</label>
+                        <input type="text" id="detailState" name="detailState" required>
+
+                        <label for="detailPincode">Pincode:</label>
+                        <input type="text" id="detailPincode" name="detailPincode" required>
+
+                        <button type="submit" id="add-address-btn">Add Address</button>
+                        <button type="button" id="clear-address-btn">Clear Form</button>
+                    </form>
+                </section>
+                
+                <hr>
+
+                <section id="address-list-section">
+                    <h3>Addresses</h3>
+                    <ul id="address-list"></ul>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
